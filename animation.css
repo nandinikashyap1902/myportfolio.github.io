@@ -1,0 +1,119 @@
+@import './styles.css';
+@keyframes example {
+  from{
+    background:linear-gradient(rgb(179, 204, 217),rgb(148, 188, 117),rgb(165, 233, 165));
+   }
+   to{
+background:linear-gradient(rgb(247, 247, 186),rgb(189, 229, 255))
+   }
+  }
+
+  @keyframes skills {
+    0%   { left:0px; top:0px;}
+    25%  { left:600px; top:0px;}
+    50%  { left:00px; top:300px;}
+    75%  { left:600px; top:600px;}
+    100% { left:0px; top:0px;}
+  }
+
+  /*@keyframes image{
+    from{
+      background:linear-gradient(red,green);
+    }
+    to{
+      background:linear-gradient(blue,yellow);
+    }
+  }
+  #portfolio-image{
+    width:300px;
+    background-image: url('./images/girl3.jpg');
+    animation:image infinite;
+  }*/
+  #welcome{
+    /*animation-name: example;
+  animation-duration: 4s;
+ animation-iteration-count: infinite;
+ animation-timing-function: ease;*/
+ 
+  }
+  #welcome:hover{
+    
+  }
+ #skills{
+  animation-name: skills;
+  animation-duration: 4s;
+ animation-iteration-count: infinite;
+  transition: width 2s, height 2s, transform 2s;
+  }
+  
+  .box{
+    transition: width 2s,height 2s ;
+      }
+    .box:hover{
+        width:100px;
+        height:100px;
+      }
+
+      #Certificates:hover #certificate-box {
+        transition: opacity 2s;
+        opacity: 1;
+        
+      }
+
+      #contactForm input[type="submit"]:hover{
+        opacity:1;
+        background:linear-gradient(rgb(187, 187, 220), white) ;
+      }
+
+      h1:hover + #myskills #skills {
+     opacity: 1;
+     transform: rotate(360deg);
+     background:linear-gradient(rgb(191, 191, 230), white) ;
+     box-shadow: 10px 10px rgb(196, 196, 196);
+      }
+
+      #heading:hover +#projects #news{
+        transform: translateX(300px);
+        opacity: 1;
+      }
+      
+      @keyframes news {
+        from{left:0;top:0;}
+        to{
+         transform: translateX(500px);
+        }
+      }
+     #heading:hover + #projects #news{
+        transition-property: transform;
+        transition-duration: 2s;
+        transition-timing-function:ease-out;
+        opacity: 1;
+        animation-name: news;
+  animation-duration: 2s;
+ animation-iteration-count: 1;
+ animation-fill-mode:both;
+      }
+
+      @keyframes weather {
+        from{left:0;top:0;}
+        to{
+         transform: translateX(500px);
+        }
+      }
+
+      #heading:hover + #projects #weather{
+        opacity: 1;
+        animation:weather 2s both; 
+      }
+
+      @keyframes calculator{
+        from{left:0;top:0;}
+        to{
+         transform: translateX(500px);
+        }
+      }
+
+      #heading:hover + #projects #calculator{
+        opacity: 1;
+        animation:weather 2s both; 
+      }
