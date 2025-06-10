@@ -5,102 +5,230 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="animation.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Nandini's portfolio</title>
+    <title>Nandini's Portfolio</title>
     <script src="https://kit.fontawesome.com/25224ecdaa.js" crossorigin="anonymous"></script>
-  </head>
 </head>
 <body>
-  <nav id="navbar">
-    <a href="#">About</a>
-    <a href="#projects">Work</a>
-    <a href="#Profiles">Contact</a>
-  </nav>
+  <header>
+    <nav id="navbar">
+      <div class="logo">NK</div>
+      <div class="nav-links">
+        <a href="#welcome-section">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#Profiles">Contact</a>
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </header>
 
-  <section id="welcome-section">
-    <h1> Hii <span>W</span>ELCOME</h1>
-    <p id="name">I am nandini</p>
-    <img src="./images/girl1.webp"/>
-<p id="web"><span>Web</span> developer</p>
-<p id="about">I'm a web Designer with experience for 10 months.expertise is to create and website design,Web Design and many more....</p>
-</section>
-  
-<hr>
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card">
-    <div class="box">
-           <img src="" alt="News-image"/>
-            <a href="https://github.com/nannu123455/News-Website">News</a>
-          </div>
-
-          <div class="box">
-            <img src="./images/Weather.png" />
-              <a href="https://github.com/nannu123455/Temprature">Weather</a>
-            </div>
-
-            <div class="box">
-              <img src="./images/calculator.png" />
-
-              <a href="https://github.com/nannu123455/calculations">Calculator</a>
-            </div>
-            </div>
-        </section>
-       
-      <hr>
-        <div id="aboutMore">
-          <h3>More about me..</h3>
-          <p>As a WebDeveloper Virtuoso, I wield HTML and CSS like a virtuoso musician plays their instrument. I don't just write code; I compose responsive symphonies that resonate with any device. Your website is my canvas, and I paint it with pixel-perfect precision and fluid animations that captivate and delight.</p>
-        <img src="./images/girl7.png"/>
+  <section id="welcome-section" class="animate-on-scroll fade-in">
+    <div class="container">
+      <div class="intro-text">
+        <h1>Hi, I'm <span>N</span>andini</h1>
+        <p id="web"><span>Web</span> Developer</p>
+        <p id="about">I'm a web designer with 2yr of experience. My expertise is in creating stunning website designs, UI/UX, and much more...</p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn primary-btn">View My Work</a>
+          <a href="#Profiles" class="btn secondary-btn">Contact Me</a>
         </div>
+      </div>
+      <div class="profile-image">
+        <img src="./images/girl1.webp" alt="Nandini's Profile Picture"/>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="animate-on-scroll slide-in-right">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <div class="card">
+        <div class="box">
+          <div class="project-img">
+            <div class="creative-project-display blog-display">
+              <div class="animated-icon">
+                <i class="fas fa-pencil-alt"></i>
+              </div>
+              <div class="animated-elements">
+                <div class="floating-element e1"><i class="fas fa-comment"></i></div>
+                <div class="floating-element e2"><i class="fas fa-image"></i></div>
+                <div class="floating-element e3"><i class="fas fa-user"></i></div>
+                <div class="floating-element e4"><i class="far fa-heart"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Blog Application</h3>
+            <p>"Responsive MERN-stack blog app with authentication, rich text editing, and CRUD functionality for posts."</p>
+            <div class="project-links">
+              <a href="https://github.com/nandinikashyap1902/MereBlogs" class="github-link"><i class="fab fa-github"></i> View Code</a>
+              <a href="https://mereblogs.netlify.app/" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="project-img">
+            <div class="creative-project-display weather-display">
+              <div class="animated-icon">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <div class="weather-elements">
+                <div class="sun"></div>
+                <div class="cloud c1"></div>
+                <div class="cloud c2"></div>
+                <div class="raindrops">
+                  <div class="drop d1"></div>
+                  <div class="drop d2"></div>
+                  <div class="drop d3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Weather App</h3>
+            <p>"An interactive weather application that shows current weather conditions and forecasts."</p>
+            <div class="project-links">
+              <a href="https://github.com/nannu123455/Temprature" class="github-link"><i class="fab fa-github"></i> View Code</a>
+              <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="project-img">
+            <div class="creative-project-display expense-display">
+              <div class="animated-icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div class="chart-elements">
+                <div class="bar b1"></div>
+                <div class="bar b2"></div>
+                <div class="bar b3"></div>
+                <div class="coin c1">$</div>
+                <div class="coin c2">$</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Expense Tracker</h3>
+            <p>"MERN-stack expense tracker with user authentication, category-wise tracking, and real-time data visualization using charts."</p>
+            <div class="project-links">
+              <a href="https://github.com/nandinikashyap1902/Expense-Tracker-App" class="github-link"><i class="fab fa-github"></i> View Code</a>
+              <a href="https://expense-tracker-app-alpha-ebon.vercel.app/" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+       
+  <div id="aboutMore" class="animate-on-scroll fade-in">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>As a Web Developer Virtuoso, I wield HTML and CSS like a virtuoso musician plays their instrument. I don't just write code; I compose responsive symphonies that resonate with any device. Your website is my canvas, and I paint it with pixel-perfect precision and fluid animations that captivate and delight.</p>
+          <p>My goal is to create web experiences that not only look beautiful but also function flawlessly across all devices. I'm passionate about clean code, accessibility, and creating interfaces that users love to interact with.</p>
+        </div>
+        <div class="about-image">
+          <img src="./images/girl7.png" alt="Nandini Kashyap"/>
+        </div>
+      </div>
+    </div>
+  </div>
     
-        <div id="skills">
-          <h3>Skills</h3>
-          <ul class="skills-list">
-              <li>
-                  <i class="fab fa-html5"></i>
-                  <span>HTML</span>
-              </li>
-              <li>
-                  <i class="fab fa-css3"></i>
-                  <span>CSS</span>
-              </li>
-              <li>
-                  <i class="fab fa-js"></i>
-                  <span>JavaScript</span>
-              </li>
-              <li>
-                  <i class="fab fa-react"></i>
-                  <span>ReactJS</span>
-              </li>
-              <li>
-                  <i class="fab fa-angular"></i>
-                  <span>Angular</span>
-              </li>
-              <li>
-                  <i class="fab fa-java"></i>
-                  <span>Java</span>
-              </li>
-          </ul>
+  <div id="skills" class="animate-on-scroll slide-in-left">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <div class="skills-container">
+        <ul class="skills-list">
+          <li>
+            <i class="fab fa-html5"></i>
+            <span>HTML</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 95%;"></div>
+            </div>
+          </li>
+          <li>
+            <i class="fab fa-css3"></i>
+            <span>CSS</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 90%;"></div>
+            </div>
+          </li>
+          <li>
+            <i class="fab fa-js"></i>
+            <span>JavaScript</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%;"></div>
+            </div>
+          </li>
+          <li>
+            <i class="fab fa-react"></i>
+            <span>ReactJS</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 80%;"></div>
+            </div>
+          </li>
+          <li>
+            <i class="fab fa-node-js"></i>
+            <span>NodeJs</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 75%;"></div>
+            </div>
+          </li>
+          <li>
+            <i class="fa-solid fa-database"></i>
+            <span>MongoDB</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 70%;"></div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </div>
+  </div>
       
-      
-        <div id="Profiles">
-        <h2>Let's connect</h2>
-        <div id="profiles-links">
-          <a class="profile-link" href="https://www.linkedin.com/in/nandini-kashyap/" target="_blank">
-              <i class="fab fa-linkedin"></i>
-          </a>
+  <div id="Profiles" class="animate-on-scroll fade-in">
+    <div class="container">
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+      <div id="profiles-links">
+        <a class="profile-link" href="https://www.linkedin.com/in/nandini-kashyap/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
         
-          <a class="profile-link" href="https://github.com/nannu123455" target="_blank">
-              <i class="fab fa-github"></i>
-          </a>
+        <a class="profile-link" href="https://github.com/nandinikashyap1902" target="_blank">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
         
-          <a class="profile-link" href="mailto:youremail@example.com">
-              <i class="fas fa-envelope"></i>
-          </a>
-        </div>  
+        <a class="profile-link" href="mailto:nandinikashyap1902@gmail.com">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </a>
+      </div>  
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Nandini Kashyap. All Rights Reserved.</p>
+        <div class="scroll-top">
+          <a href="#welcome-section"><i class="fas fa-arrow-up"></i></a>
+        </div>
       </div>
-      
-              </body>
+    </div>
+  </footer>
+
+  <script src="hello.js"></script>
+</body>
 </html>
