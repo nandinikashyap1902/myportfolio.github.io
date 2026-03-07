@@ -1,19 +1,38 @@
-var b=10;
-console.log(b)
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile navigation menu toggle
+
+    // ── Theme Toggle ──────────────────────────────────────
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const metaTheme = document.getElementById('meta-theme');
+
+    const applyTheme = (isLight) => {
+        document.body.classList.toggle('light-mode', isLight);
+        themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+        if (metaTheme) metaTheme.content = isLight ? '#f0f4f8' : '#121A23';
+    };
+
+    // Restore saved preference (default: dark)
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'light');
+
+    themeToggle.addEventListener('click', () => {
+        const isNowLight = !document.body.classList.contains('light-mode');
+        applyTheme(isNowLight);
+        localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+    });
+
+    // ── Mobile navigation menu toggle ─────────────────────
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
     }
-    
+
     // Close mobile menu when a link is clicked
     const navItems = document.querySelectorAll('.nav-links a');
     navItems.forEach(item => {
@@ -25,34 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Animation
+    // ── Scroll Animation ──────────────────────────────────
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.animate-on-scroll');
-        
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
-            
-            // If element is in viewport
             if (elementPosition < windowHeight - 100) {
                 element.classList.add('visible');
             }
         });
     };
 
-    // Run animation check on load
     animateOnScroll();
-    
-    // Run animation check on scroll
     window.addEventListener('scroll', animateOnScroll);
 
-    // Add active class to the current navigation item
+    // ── Active nav link on scroll ─────────────────────────
     const sections = document.querySelectorAll('section, #aboutMore, #skills, #Profiles');
     const navLinksItems = document.querySelectorAll('.nav-links a');
 
     const highlightNavOnScroll = () => {
         let currentSection = '';
-        
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.clientHeight;
@@ -60,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentSection = section.getAttribute('id');
             }
         });
-        
         navLinksItems.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSection}`) {

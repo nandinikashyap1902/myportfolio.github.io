@@ -2,20 +2,84 @@
 
 :root {
   /* Fresh Mint & Coral Theme */
-  --primary-color: #38E4AE;        /* Mint Green */
-  --secondary-color: #2BB894;      /* Deep Mint */
-  --accent-color: #FF7E5F;         /* Coral */
-  --accent-hover: #FF5A36;         /* Dark Coral */
-  --background-dark: #121A23;      /* Dark Navy */
-  --background-light: #1A2532;     /* Navy Blue */
-  --card-bg: #1F2E3D;              /* Lighter Navy */
-  --text-light: #ffffff;           /* White */
-  --text-gray: #CED7E0;            /* Light Blue Gray */
-  --text-dark: #333333;            /* Dark Gray */
+  --primary-color: #38E4AE;
+  /* Mint Green */
+  --secondary-color: #2BB894;
+  /* Deep Mint */
+  --accent-color: #FF7E5F;
+  /* Coral */
+  --accent-hover: #FF5A36;
+  /* Dark Coral */
+  --background-dark: #121A23;
+  /* Dark Navy */
+  --background-light: #1A2532;
+  /* Navy Blue */
+  --card-bg: #1F2E3D;
+  /* Lighter Navy */
+  --text-light: #ffffff;
+  /* White */
+  --text-gray: #CED7E0;
+  /* Light Blue Gray */
+  --text-dark: #333333;
+  /* Dark Gray */
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease;
   --gradient-primary: linear-gradient(to right, #38E4AE, #2BB894);
   --gradient-accent: linear-gradient(to right, #FF7E5F, #FF5A36);
+}
+
+/* ── Light Mode Variables ── */
+body.light-mode {
+  --background-dark: #f0f4f8;
+  --background-light: #e2eaf3;
+  --card-bg: #ffffff;
+  --text-light: #1a2532;
+  --text-gray: #4a5568;
+  --text-dark: #1a2532;
+  --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  --primary-color: #0ea878;
+  --secondary-color: #0b9066;
+  --accent-color: #e85d3a;
+  --gradient-primary: linear-gradient(to right, #0ea878, #0b9066);
+  --gradient-accent: linear-gradient(to right, #e85d3a, #c4431e);
+}
+
+/* ── Smooth global transition for theme switch ── */
+*,
+*::before,
+*::after {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ── nav-right wrapper ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Theme toggle button ── */
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+#theme-toggle:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: rotate(20deg) scale(1.1);
 }
 
 * {
@@ -219,7 +283,10 @@ header {
 }
 
 /* Section Styles */
-section, #aboutMore, #skills, #Profiles {
+section,
+#aboutMore,
+#skills,
+#Profiles {
   padding: 5rem 0;
 }
 
@@ -378,52 +445,183 @@ section, #aboutMore, #skills, #Profiles {
   border: 3px solid var(--primary-color);
 }
 
-/* Skills Section */
-.skills-container {
-  max-width: 800px;
-  margin: 0 auto;
+/* Skills Section — Categorized Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 1rem;
 }
 
+.skill-category {
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(56, 228, 174, 0.1);
+  transition: var(--transition);
+}
+
+.skill-category:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  border-color: rgba(56, 228, 174, 0.25);
+}
+
+/* Category header strip */
+.skill-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.4rem;
+  border-bottom: 1px solid rgba(56, 228, 174, 0.1);
+}
+
+.skill-category-header i {
+  font-size: 1.4rem;
+}
+
+.skill-category-header h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-light);
+  letter-spacing: 0.02em;
+}
+
+/* Per-category accent colors */
+.skill-category:nth-child(1) .skill-category-header {
+  background: rgba(45, 212, 191, 0.08);
+  border-bottom-color: rgba(45, 212, 191, 0.15);
+}
+
+.skill-category:nth-child(1) .skill-category-header i {
+  color: #2dd4bf;
+}
+
+.skill-category:nth-child(2) .skill-category-header {
+  background: rgba(56, 228, 174, 0.08);
+  border-bottom-color: rgba(56, 228, 174, 0.15);
+}
+
+.skill-category:nth-child(2) .skill-category-header i {
+  color: #38E4AE;
+}
+
+.skill-category:nth-child(3) .skill-category-header {
+  background: rgba(168, 85, 247, 0.1);
+  border-bottom-color: rgba(168, 85, 247, 0.2);
+}
+
+.skill-category:nth-child(3) .skill-category-header i {
+  color: #c084fc;
+}
+
+.skill-category:nth-child(4) .skill-category-header {
+  background: rgba(251, 191, 36, 0.08);
+  border-bottom-color: rgba(251, 191, 36, 0.15);
+}
+
+.skill-category:nth-child(4) .skill-category-header i {
+  color: #fbbf24;
+}
+
+.skill-category:nth-child(5) .skill-category-header {
+  background: rgba(56, 189, 248, 0.08);
+  border-bottom-color: rgba(56, 189, 248, 0.15);
+}
+
+.skill-category:nth-child(5) .skill-category-header i {
+  color: #38bdf8;
+}
+
+/* Skills list inside each category */
 .skills-list {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.6rem 0;
 }
 
 .skills-list li {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  border: 1px solid rgba(56, 228, 174, 0.1);
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.65rem 1.4rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skills-list li:last-child {
+  border-bottom: none;
 }
 
 .skills-list i {
-  font-size: 2.5rem;
+  font-size: 1.35rem;
   color: var(--primary-color);
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 .skills-list span {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 500;
+  flex: 1;
+  min-width: 100px;
 }
 
 .skill-bar {
-  height: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
   overflow: hidden;
+  flex-basis: 100%;
+  margin-left: calc(24px + 0.85rem);
 }
 
 .skill-level {
   height: 100%;
   background: var(--gradient-primary);
+  border-radius: 4px;
+  transition: width 1.2s ease;
 }
+
+/* Per-category skill icon colors */
+.skill-category:nth-child(1) .skills-list i {
+  color: #2dd4bf;
+}
+
+.skill-category:nth-child(2) .skills-list i {
+  color: #38E4AE;
+}
+
+.skill-category:nth-child(3) .skills-list i {
+  color: #c084fc;
+}
+
+.skill-category:nth-child(3) .skill-level {
+  background: linear-gradient(to right, #c084fc, #818cf8);
+}
+
+.skill-category:nth-child(4) .skills-list i {
+  color: #fbbf24;
+}
+
+.skill-category:nth-child(4) .skill-level {
+  background: linear-gradient(to right, #fbbf24, #f59e0b);
+}
+
+.skill-category:nth-child(5) .skills-list i {
+  color: #38bdf8;
+}
+
+.skill-category:nth-child(5) .skill-level {
+  background: linear-gradient(to right, #38bdf8, #0891b2);
+}
+
 
 /* Contact Section */
 #Profiles {
@@ -532,9 +730,11 @@ footer {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -543,6 +743,149 @@ footer {
 /* Blog Display */
 .blog-display {
   background: linear-gradient(135deg, var(--navy-blue), var(--dark-navy));
+}
+
+/* RAG Chatbot Display */
+.chatbot-display {
+  background: linear-gradient(135deg, #1a0533, #0d1b4b);
+}
+
+.chatbot-display .floating-element {
+  color: #c084fc;
+  background: rgba(88, 28, 135, 0.6);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.chatbot-display .animated-icon {
+  color: #c084fc;
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.7));
+}
+
+/* Tech Tags — base */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Tag color variants */
+.tag-purple {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+}
+
+.tag-teal {
+  background: rgba(20, 184, 166, 0.15);
+  color: #2dd4bf;
+  border: 1px solid rgba(20, 184, 166, 0.35);
+}
+
+.tag-sky {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.tag-gold {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.tag-rose {
+  background: rgba(251, 113, 133, 0.15);
+  color: #fb7185;
+  border: 1px solid rgba(251, 113, 133, 0.35);
+}
+
+.tag-cyan {
+  background: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+/* Blog App Display — teal theme */
+.blog-app-display {
+  background: linear-gradient(135deg, #031b17, #0a2a3b);
+}
+
+.blog-app-display .floating-element {
+  color: #2dd4bf;
+  background: rgba(13, 74, 65, 0.7);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.4);
+}
+
+.blog-app-display .animated-icon {
+  color: #2dd4bf;
+  filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.7));
+}
+
+/* Task Manager Display — rose/pink theme */
+.task-display {
+  background: linear-gradient(135deg, #2d0a18, #1a0a2e);
+}
+
+.task-display .floating-element {
+  color: #fb7185;
+  background: rgba(136, 19, 55, 0.6);
+  box-shadow: 0 0 15px rgba(251, 113, 133, 0.4);
+}
+
+.task-display .animated-icon {
+  color: #fb7185;
+  filter: drop-shadow(0 0 12px rgba(251, 113, 133, 0.7));
+}
+
+/* Persona AI Display — indigo/violet theme */
+.persona-display {
+  background: linear-gradient(135deg, #0f0a2e, #1a0d3b);
+}
+
+.persona-display .floating-element {
+  color: #818cf8;
+  background: rgba(49, 46, 129, 0.6);
+  box-shadow: 0 0 15px rgba(129, 140, 248, 0.4);
+}
+
+.persona-display .animated-icon {
+  color: #818cf8;
+  filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.7));
+}
+
+/* Tokenization Display — cyan theme */
+.token-display {
+  background: linear-gradient(135deg, #021a1f, #0a1f2e);
+}
+
+.token-display .floating-element {
+  color: #22d3ee;
+  background: rgba(8, 79, 92, 0.6);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.token-display .animated-icon {
+  color: #22d3ee;
+  filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.7));
+}
+
+/* Weather Display — sky blue theme (restyle) */
+.weather-display {
+  background: linear-gradient(135deg, #082040, #0c2d5e);
+}
+
+.weather-display .animated-icon {
+  color: #38bdf8;
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.7));
 }
 
 .animated-elements {
@@ -592,9 +935,12 @@ footer {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
@@ -708,24 +1054,39 @@ footer {
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes drift {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-30px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-30px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes raindrop {
-  0% { 
+  0% {
     transform: translateY(-15px);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(50px);
     opacity: 0;
@@ -798,13 +1159,23 @@ footer {
 }
 
 @keyframes grow {
-  from { height: 20px; }
-  to { height: 90px; }
+  from {
+    height: 20px;
+  }
+
+  to {
+    height: 90px;
+  }
 }
 
 @keyframes spin {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(360deg); }
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 /* Responsive adjustments */
@@ -812,26 +1183,26 @@ footer {
   .creative-project-display {
     height: 180px;
   }
-  
+
   .animated-icon {
     font-size: 2.5rem;
   }
-  
+
   .floating-element {
     width: 30px;
     height: 30px;
     font-size: 1rem;
   }
-  
+
   .sun {
     width: 50px;
     height: 50px;
   }
-  
+
   .cloud.c1 {
     width: 60px;
   }
-  
+
   .bar {
     width: 20px;
   }
@@ -841,11 +1212,11 @@ footer {
   .creative-project-display {
     height: 150px;
   }
-  
+
   .animated-icon {
     font-size: 2rem;
   }
-  
+
   .floating-element {
     width: 25px;
     height: 25px;
@@ -876,7 +1247,7 @@ footer {
     flex-direction: column-reverse;
     text-align: center;
   }
-  
+
   .about-image {
     margin-bottom: 2rem;
   }
@@ -904,7 +1275,7 @@ footer {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
@@ -912,15 +1283,15 @@ footer {
   #welcome-section h1 {
     font-size: 2.5rem;
   }
-  
+
   #welcome-section #web {
     font-size: 1.5rem;
   }
-  
+
   .skills-list {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: 1rem;
@@ -931,16 +1302,206 @@ footer {
   #welcome-section h1 {
     font-size: 2rem;
   }
-  
+
   #projects .card {
     grid-template-columns: 1fr;
   }
-  
+
   #profiles-links {
     gap: 1rem;
   }
-  
+
   .profile-link {
     width: 100px;
   }
+}
+
+/* ════════════════════════════════════════════
+   LIGHT MODE — component-specific overrides
+   (Things that don't inherit from CSS vars)
+═══════════════════════════════════════════════ */
+body.light-mode header {
+  background: rgba(240, 244, 248, 0.92);
+  border-bottom-color: rgba(14, 168, 120, 0.2);
+}
+
+body.light-mode .hamburger .line {
+  background-color: var(--text-light);
+}
+
+body.light-mode .nav-links {
+  background: var(--background-dark);
+}
+
+/* Project card panels */
+body.light-mode .box {
+  border-color: rgba(14, 168, 120, 0.15);
+}
+
+body.light-mode .box:hover {
+  border-color: rgba(14, 168, 120, 0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Display panels — lighten in light mode */
+body.light-mode .blog-app-display {
+  background: linear-gradient(135deg, #c8f0e9, #d4eaf7);
+}
+
+body.light-mode .weather-display {
+  background: linear-gradient(135deg, #cce8f7, #d6e9fb);
+}
+
+body.light-mode .expense-display {
+  background: linear-gradient(135deg, #f7f0cc, #fdf0d5);
+}
+
+body.light-mode .task-display {
+  background: linear-gradient(135deg, #fce4ec, #f3e0f7);
+}
+
+body.light-mode .chatbot-display {
+  background: linear-gradient(135deg, #ede0fb, #dce0fb);
+}
+
+body.light-mode .persona-display {
+  background: linear-gradient(135deg, #e0e0fb, #d8d0f5);
+}
+
+body.light-mode .token-display {
+  background: linear-gradient(135deg, #ccf4fb, #d0ecfb);
+}
+
+/* Keep icons dark in light panels */
+body.light-mode .blog-app-display .animated-icon {
+  color: #0b9066;
+  filter: drop-shadow(0 0 8px rgba(11, 144, 102, 0.5));
+}
+
+body.light-mode .weather-display .animated-icon {
+  color: #1a85c7;
+  filter: drop-shadow(0 0 8px rgba(26, 133, 199, 0.5));
+}
+
+body.light-mode .expense-display .animated-icon {
+  color: #c47d00;
+  filter: drop-shadow(0 0 8px rgba(196, 125, 0, 0.5));
+}
+
+body.light-mode .task-display .animated-icon {
+  color: #c1324a;
+  filter: drop-shadow(0 0 8px rgba(193, 50, 74, 0.5));
+}
+
+body.light-mode .chatbot-display .animated-icon {
+  color: #7c3aed;
+  filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
+}
+
+body.light-mode .persona-display .animated-icon {
+  color: #4338ca;
+  filter: drop-shadow(0 0 8px rgba(67, 56, 202, 0.5));
+}
+
+body.light-mode .token-display .animated-icon {
+  color: #0891b2;
+  filter: drop-shadow(0 0 8px rgba(8, 145, 178, 0.5));
+}
+
+/* Floating elements in light mode */
+body.light-mode .blog-app-display .floating-element {
+  color: #0b9066;
+  background: rgba(14, 168, 120, 0.15);
+  box-shadow: none;
+}
+
+body.light-mode .task-display .floating-element {
+  color: #c1324a;
+  background: rgba(193, 50, 74, 0.12);
+  box-shadow: none;
+}
+
+body.light-mode .chatbot-display .floating-element {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.12);
+  box-shadow: none;
+}
+
+body.light-mode .persona-display .floating-element {
+  color: #4338ca;
+  background: rgba(67, 56, 202, 0.12);
+  box-shadow: none;
+}
+
+body.light-mode .token-display .floating-element {
+  color: #0891b2;
+  background: rgba(8, 145, 178, 0.12);
+  box-shadow: none;
+}
+
+/* Weather children */
+body.light-mode .sun {
+  box-shadow: 0 0 30px rgba(255, 200, 0, 0.5);
+}
+
+body.light-mode .cloud.c1,
+body.light-mode .cloud.c2 {
+  background: rgba(100, 150, 220, 0.35);
+}
+
+body.light-mode .drop {
+  background: #5aabdd;
+}
+
+/* Chart bars in light mode */
+body.light-mode .bar {
+  background: var(--primary-color);
+  box-shadow: none;
+}
+
+body.light-mode .coin {
+  box-shadow: 0 0 8px rgba(200, 160, 0, 0.4);
+}
+
+/* Skills section */
+body.light-mode .skill-category {
+  border-color: rgba(14, 168, 120, 0.12);
+}
+
+body.light-mode .skill-category:hover {
+  border-color: rgba(14, 168, 120, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .skills-list li {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .skill-bar {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Connect section */
+body.light-mode #Profiles {
+  background: var(--background-light);
+}
+
+body.light-mode .profile-link {
+  border-color: rgba(14, 168, 120, 0.15);
+}
+
+/* Footer */
+body.light-mode footer {
+  background: var(--background-light);
+  border-top-color: rgba(14, 168, 120, 0.15);
+}
+
+/* Scroll-top button */
+body.light-mode .scroll-top a {
+  box-shadow: 0 5px 15px rgba(14, 168, 120, 0.3);
+}
+
+/* Section title underline */
+body.light-mode .section-title::after {
+  background: var(--gradient-primary);
 }

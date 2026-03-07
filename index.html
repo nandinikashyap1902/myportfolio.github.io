@@ -8,6 +8,7 @@
   <link href="styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="animation.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="theme-color" content="#121A23" id="meta-theme">
   <title>Nandini's Portfolio</title>
   <script src="https://kit.fontawesome.com/25224ecdaa.js" crossorigin="anonymous"></script>
 </head>
@@ -22,10 +23,15 @@
         <a href="#skills">Skills</a>
         <a href="#Profiles">Contact</a>
       </div>
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div class="nav-right">
+        <button id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
       </div>
     </nav>
   </header>
@@ -56,7 +62,7 @@
       <div class="card">
         <div class="box">
           <div class="project-img">
-            <div class="creative-project-display blog-display">
+            <div class="creative-project-display blog-app-display">
               <div class="animated-icon">
                 <i class="fas fa-pencil-alt"></i>
               </div>
@@ -72,6 +78,13 @@
             <h3>Blog Application</h3>
             <p>"Advanced MERN blog platform featuring AI-powered writing assistants to generate and refine content.
               Includes authentication, rich text editing, and seamless CRUD operations."</p>
+            <div class="tech-tags">
+              <span class="tag tag-teal">React</span>
+              <span class="tag tag-teal">Node.js</span>
+              <span class="tag tag-teal">MongoDB</span>
+              <span class="tag tag-teal">Express</span>
+              <span class="tag tag-teal">Gemini AI</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/MereBlogs" class="github-link"><i
                   class="fab fa-github"></i> View Code</a>
@@ -102,6 +115,12 @@
           <div class="project-info">
             <h3>Weather App</h3>
             <p>"An interactive weather application that shows current weather conditions and forecasts."</p>
+            <div class="tech-tags">
+              <span class="tag tag-sky">JavaScript</span>
+              <span class="tag tag-sky">HTML/CSS</span>
+              <span class="tag tag-sky">OpenWeather API</span>
+              <span class="tag tag-sky">REST API</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/Weather_WebApp" class="github-link"><i
                   class="fab fa-github"></i> View Code</a>
@@ -128,8 +147,16 @@
           </div>
           <div class="project-info">
             <h3>Expense Tracker</h3>
-            <p>"Smart expense manager equipped with an AI Chatbot and an AI summarizer for personalized financial insights. Features
+            <p>"Smart expense manager equipped with an AI Chatbot and an AI summarizer for personalized financial
+              insights. Features
               real-time visualization, category tracking, and secure authentication."</p>
+            <div class="tech-tags">
+              <span class="tag tag-gold">React</span>
+              <span class="tag tag-gold">Node.js</span>
+              <span class="tag tag-gold">MongoDB</span>
+              <span class="tag tag-gold">Chart.js</span>
+              <span class="tag tag-gold">Gemini AI</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/Expense-Tracker-App" class="github-link"><i
                   class="fab fa-github"></i> View Code</a>
@@ -141,7 +168,7 @@
 
         <div class="box">
           <div class="project-img">
-            <div class="creative-project-display blog-display">
+            <div class="creative-project-display task-display">
               <div class="animated-icon">
                 <i class="fas fa-clipboard-list"></i>
               </div>
@@ -156,9 +183,16 @@
           <div class="project-info">
             <h3>Task Manager</h3>
             <p>"Task management platform built with MERN and Firebase for real-time updates and notifications."</p>
+            <div class="tech-tags">
+              <span class="tag tag-rose">React</span>
+              <span class="tag tag-rose">Node.js</span>
+              <span class="tag tag-rose">MongoDB</span>
+              <span class="tag tag-rose">Firebase</span>
+              <span class="tag tag-rose">Real-time</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/Task-Manager" class="github-link"><i
-                  class="fab fa-github"></i>View Code</a>
+                  class="fab fa-github"></i> View Code</a>
               <a href="https://task-manager-lilac-one.vercel.app/" class="demo-link"><i
                   class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
@@ -168,9 +202,45 @@
 
       <h3 class="project-category-title">AI / Generative AI Projects</h3>
       <div class="card">
+
         <div class="box">
           <div class="project-img">
-            <div class="creative-project-display blog-display">
+            <div class="creative-project-display chatbot-display">
+              <div class="animated-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <div class="animated-elements">
+                <div class="floating-element e1"><i class="fas fa-file-pdf"></i></div>
+                <div class="floating-element e2"><i class="fas fa-database"></i></div>
+                <div class="floating-element e3"><i class="fas fa-bolt"></i></div>
+                <div class="floating-element e4"><i class="fas fa-link"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>RAG AI Chatbot</h3>
+            <p>"Intelligent chatbot powered by a full RAG pipeline — upload PDFs, images, or URLs and chat with your
+              data in real-time. Built with Groq (Llama), Pinecone Vector DB, and Gemini Embeddings with token-optimized
+              streaming responses."</p>
+            <div class="tech-tags">
+              <span class="tag tag-purple">Groq / Llama</span>
+              <span class="tag tag-purple">Pinecone</span>
+              <span class="tag tag-purple">Gemini Embeddings</span>
+              <span class="tag tag-purple">RAG</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/nandinikashyap1902/Chatbot" class="github-link"><i class="fab fa-github"></i>
+                View
+                Code</a>
+              <a href="https://chatbotgroq1.netlify.app/" class="demo-link"><i class="fas fa-external-link-alt"></i>
+                Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="project-img">
+            <div class="creative-project-display persona-display">
               <div class="animated-icon">
                 <i class="fas fa-robot"></i>
               </div>
@@ -186,6 +256,12 @@
             <h3>Persona Ai</h3>
             <p>"This project lets you select a tech educator persona (e.g. Hitesh Choudhary or Piyush Garg) and chat
               with an AI that mimics their unique style."</p>
+            <div class="tech-tags">
+              <span class="tag tag-purple">React</span>
+              <span class="tag tag-purple">OpenAI</span>
+              <span class="tag tag-purple">Prompt Engineering</span>
+              <span class="tag tag-purple">Node.js</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/Persona-Ai" class="github-link"><i
                   class="fab fa-github"></i> View Code</a>
@@ -195,7 +271,7 @@
           </div>
         </div>
 
-        <div class="box">
+        <!-- <div class="box">
           <div class="project-img">
             <div class="creative-project-display blog-display">
               <div class="animated-icon">
@@ -220,11 +296,11 @@
                   class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="box">
           <div class="project-img">
-            <div class="creative-project-display blog-display">
+            <div class="creative-project-display token-display">
               <div class="animated-icon">
                 <i class="fas fa-cube"></i>
               </div>
@@ -237,9 +313,15 @@
             </div>
           </div>
           <div class="project-info">
-            <h3>Tokenization & Vector Embedding</h3>
+            <h3>Tokenization &amp; Vector Embedding</h3>
             <p>"This project provides a simple way to turn user text into tokens and semantic embeddings using OpenAI’s
               API."</p>
+            <div class="tech-tags">
+              <span class="tag tag-cyan">JavaScript</span>
+              <span class="tag tag-cyan">OpenAI API</span>
+              <span class="tag tag-cyan">Embeddings</span>
+              <span class="tag tag-cyan">Tokenization</span>
+            </div>
             <div class="project-links">
               <a href="https://github.com/nandinikashyap1902/tokenization-app" class="github-link"><i
                   class="fab fa-github"></i> View Code</a>
@@ -274,51 +356,191 @@
   <div id="skills" class="animate-on-scroll slide-in-left">
     <div class="container">
       <h2 class="section-title">My <span>Skills</span></h2>
-      <div class="skills-container">
-        <ul class="skills-list">
-          <li>
-            <i class="fab fa-html5"></i>
-            <span>HTML</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 95%;"></div>
-            </div>
-          </li>
-          <li>
-            <i class="fab fa-css3"></i>
-            <span>CSS</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%;"></div>
-            </div>
-          </li>
-          <li>
-            <i class="fab fa-js"></i>
-            <span>JavaScript</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%;"></div>
-            </div>
-          </li>
-          <li>
-            <i class="fab fa-react"></i>
-            <span>ReactJS</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 80%;"></div>
-            </div>
-          </li>
-          <li>
-            <i class="fab fa-node-js"></i>
-            <span>NodeJs</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 75%;"></div>
-            </div>
-          </li>
-          <li>
-            <i class="fa-solid fa-database"></i>
-            <span>MongoDB</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 70%;"></div>
-            </div>
-          </li>
-        </ul>
+      <div class="skills-grid">
+
+        <!-- Frontend -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Frontend</h3>
+          </div>
+          <ul class="skills-list">
+            <li>
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 95%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 90%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 87%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-react"></i>
+              <span>ReactJS</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 82%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend</h3>
+          </div>
+          <ul class="skills-list">
+            <li>
+              <i class="fab fa-node-js"></i>
+              <span>Node.js</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-route"></i>
+              <span>Express.js</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 78%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-exchange-alt"></i>
+              <span>REST APIs</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 82%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-lock"></i>
+              <span>JWT / Auth</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- AI & Generative AI -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI &amp; Generative AI</h3>
+          </div>
+          <ul class="skills-list">
+            <li>
+              <i class="fas fa-robot"></i>
+              <span>Generative AI (LLMs)</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-project-diagram"></i>
+              <span>RAG Pipelines</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 78%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-vector-square"></i>
+              <span>Vector Embeddings</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 75%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-comment-dots"></i>
+              <span>Prompt Engineering</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 82%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <ul class="skills-list">
+            <li>
+              <i class="fas fa-leaf"></i>
+              <span>MongoDB</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 78%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-fire"></i>
+              <span>Firebase</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 72%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-search"></i>
+              <span>Pinecone (Vector DB)</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 70%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <i class="fas fa-tools"></i>
+            <h3>DevOps &amp; Tools</h3>
+          </div>
+          <ul class="skills-list">
+            <li>
+              <i class="fab fa-github"></i>
+              <span>Git &amp; GitHub</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 85%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 65%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Netlify / Vercel / Render</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-terminal"></i>
+              <span>Linux / CLI</span>
+              <div class="skill-bar">
+                <div class="skill-level" style="width: 70%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
