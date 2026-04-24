@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const metaTheme = document.getElementById('meta-theme');
-
     const applyTheme = (isLight) => {
         document.body.classList.toggle('light-mode', isLight);
         themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
